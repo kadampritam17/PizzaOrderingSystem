@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Admin Login</h2>
+<hr />
+<div>
+    @using (Html.BeginForm())
+    {
+        <form method="post" action="/admin/login">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email id">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter the password">
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    }
+</div>
+

@@ -1,0 +1,35 @@
+﻿@using PizzaOrderingSystem.Models
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Pizza Details</h2>
+
+<hr />
+<a href="/pizza/index" class="btn btn-success">View All Pizza</a>
+
+@{
+    Pizza pizza = ViewData["pizza"] as Pizza;
+    <hr />
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Pizza Name: </th>
+                <td>@pizza.PizzaName</td>
+            </tr>
+            <tr>
+                <th>Pizza Description: </th>
+                <td> @pizza.PizzaDescription</td>
+            </tr>
+            <tr>
+                <th>Pizza Type: </th>
+                <td>@pizza.PizzaType</td>
+            </tr>
+            <tr>
+                <th>Pizza Unit Price: </th>
+                <td> @pizza.PizzaUnitPrice</td>
+            </tr>
+        </tbody>
+    </table>
+}

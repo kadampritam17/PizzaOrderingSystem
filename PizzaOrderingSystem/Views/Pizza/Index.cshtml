@@ -1,0 +1,52 @@
+﻿@using PizzaOrderingSystem.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pizza</h2>
+
+<hr />
+
+@{
+    //get all pizza records
+    List<Pizza> allPizza = ViewData["pizza"] as List<Pizza>;
+}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">UnitPrice</th>
+            @* <th scope="col">Action</th>*@
+            @{
+
+                if (Request.IsAuthenticated)
+                {
+                    <th scope="col">Update</th>
+                }
+
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @{ foreach (Pizza pizza in allPizza)
+            {
+                <tr>
+                    <th>@pizza.Id </th>
+                    <td><a href="/pizza/details/@pizza.Id" class="btn btn-warning">@pizza.PizzaName </a> </td>
+                    <td>@pizza.PizzaUnitPrice </td>
+                    @*<td><a href="/pizza/details/@pizza.Id" class="btn btn-success">Details</a> </td>*@
+                    @{
+
+                        if (Request.IsAuthenticated)
+                        {
+                            <td><a href="/pizza/update/@pizza.Id" class="btn btn-success">Update</a> </td>
+                        }
+
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

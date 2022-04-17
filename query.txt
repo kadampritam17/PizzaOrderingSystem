@@ -1,0 +1,10 @@
+create table tbl_pizza(id int primary key auto_increment,pizzaname varchar(100),pizzadescription varchar(200),pizzatype varchar(50),pizzaunitprice int);
+
+insert into tbl_pizza values(1,"Spicy Paneer","med spicy with sauce","Small",200);
+
+insert into tbl_pizza values(default,"Peppy Paneer","Double cheese","Medium",200);
+
+insert into tbl_pizza values(default,"Double Margherita","with loadded cheese","small",200);
+
+
+insert into tbl_pizza values(default,"Farm House","tangy taste with loadded cheese","large",579);
